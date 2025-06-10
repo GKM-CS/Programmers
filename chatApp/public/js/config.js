@@ -1,0 +1,6 @@
+const SERVER_CONFIG = {
+    HOST: '172.28.18.114',
+    PORT: '3000'
+};
+
+const SERVER_URL = `http://${SERVER_CONFIG.HOST}:${SERVER_CONFIG.PORT}`;

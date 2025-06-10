@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avian Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="nickname-modal" class="modal">
+        <div class="modal-content">
+            <h2>닉네임 설정</h2>
+            <form id="nickname-form">
+                <input 
+                    type="text" 
+                    id="nickname-input" 
+                    placeholder="닉네임을 입력하세요" 
+                    maxlength="20"
+                    required
+                >
+                <button type="submit">확인</button>
+            </form>
+        </div>
+    </div>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Avian Chat</h1>
+            </div>
+            <div class="room-list">
+                <div class="room-item active">
+                    <i class="fas fa-hashtag"></i>
+                    <span id="room-id">room1</span>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="chat-container">
+            <div class="chat-header">
+                <div class="channel-info">
+                    <i class="fas fa-hashtag"></i>
+                    <h2>채팅방</h2>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span class="online-count">1 online</span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- 메시지들이 여기에 동적으로 추가됩니다 -->
+            </div>
+            
+            <div class="chat-input-container">
+                <form id="message-form">
+                    <div class="input-wrapper">
+                        <label for="file-input" class="file-label">
+                            <i class="fas fa-paperclip"></i>
+                        </label>
+                        <input type="file" id="file-input" accept="image/*" style="display: none;">
+                        <button type="button" id="emoji-button" class="emoji-button">
+                            <i class="far fa-smile"></i>
+                        </button>
+                        <div id="emoji-popup" class="emoji-popup">
+                            <div class="emoji-container">
+                                <!-- 이모지들이 여기에 동적으로 추가됩니다 -->
+                            </div>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            placeholder="메시지를 입력하세요..." 
+                            autocomplete="off"
+                        >
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html> 
